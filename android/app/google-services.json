@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1089934354533",
+    "project_id": "bmtecnolabs",
+    "storage_bucket": "bmtecnolabs.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1089934354533:android:b4ab82697a2d1b6f163e8c",
+        "android_client_info": {
+          "package_name": "com.example.bm_tecno_lab"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxdOlC6FFVkyJ-yDe_g_0b6jh2dmfPDEE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
