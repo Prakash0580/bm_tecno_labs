@@ -31,7 +31,8 @@ class ContactUsResp {
             : mobileQuery.docs.first.id;
         await collectionRef.doc(docId).update({
           'msg': FieldValue.arrayUnion([msg]),
-          'up_date': DateTime.now()
+          'up_date': DateTime.now(),
+          'seen': false
         });
         log('List item updated successfully!');
       } else {
@@ -41,7 +42,8 @@ class ContactUsResp {
           'mobile': mobile,
           'msg': [msg],
           'cr_date': DateTime.now(),
-          'up_date': DateTime.now()
+          'up_date': DateTime.now(),
+          'seen': false
         });
       }
 
