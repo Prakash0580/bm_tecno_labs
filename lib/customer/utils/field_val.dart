@@ -47,6 +47,7 @@ class TxtField extends StatelessWidget {
   final bool? readOnly, filled, border;
   final Color? fillColor;
   final TextStyle? style;
+  final MaxLengthEnforcement? maxLengthEnforcement;
 
   const TxtField(
       {Key? key,
@@ -63,6 +64,7 @@ class TxtField extends StatelessWidget {
       this.maxLength,
       this.minLines,
       this.maxLines,
+      this.maxLengthEnforcement,
       this.onSaved,
       this.onChanged,
       this.readOnly,
@@ -82,7 +84,6 @@ class TxtField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      
       child: TextFormField(
           onTap: onTap,
           style: style ??
@@ -100,6 +101,7 @@ class TxtField extends StatelessWidget {
           cursorWidth: 1,
           minLines: minLines,
           maxLength: maxLength,
+          maxLengthEnforcement: maxLengthEnforcement,
           controller: controller,
           onSaved: onSaved,
           keyboardType: keyboardType,
@@ -229,8 +231,11 @@ validateField(String value) {
 }
 
 validateMobile(String value) {
+  bool validMobile = RegExp(r'^[6-9]\d{9}$').hasMatch(value);
   if (value.isEmpty) {
     return 'Mobile Number is Required.';
+  } else if (validMobile == false) {
+    return 'Mobile Number is Not Valid.';
   } else if (value.length < 10) {
     return 'Mobile Number required at least 10 numbers';
   } else if (value.length > 11) {
@@ -256,6 +261,7 @@ validateEmail(String value) {
   bool validEmail = RegExp(
           r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
       .hasMatch(value);
+
   if (value.isEmpty) {
     return 'Email is Required.';
   } else if (validEmail == false) {

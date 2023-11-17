@@ -1,6 +1,10 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import '../backend/data_store.dart';
+import '../backend/debounce.dart';
 import '../utils/common_style.dart';
 import '../utils/field_val.dart';
 
@@ -77,53 +81,127 @@ class ContactDetails extends StatelessWidget {
   }
 }
 
-class ContactForm extends StatelessWidget {
-  ContactForm({super.key});
+class ContactForm extends StatefulWidget {
+  const ContactForm({super.key});
 
+  @override
+  State<ContactForm> createState() => _ContactFormState();
+}
+
+class _ContactFormState extends State<ContactForm> {
   TextEditingController nameCont = TextEditingController();
+
   TextEditingController emailCont = TextEditingController();
+
   TextEditingController mobileCont = TextEditingController();
+
   TextEditingController messegeCont = TextEditingController();
+
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+
+  final debounce = Debouncer(milliseconds: 500);
+
+  @override
+  void dispose() {
+    nameCont.clear();
+    emailCont.clear();
+    messegeCont.clear();
+    mobileCont.clear();
+    debounce.cancel();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        TxtField(
-          hintText: "Name",
-          validator: validateField,
-          controller: nameCont,
-        ),
-        heightSizedBox(30.0),
-        TxtField(
-          hintText: "Email",
-          validator: validateField,
-          controller: emailCont,
-        ),
-        heightSizedBox(30.0),
-        TxtField(
-          hintText: "Mobile",
-          validator: validateField,
-          controller: mobileCont,
-        ),
-        heightSizedBox(30.0),
-        TxtField(
-          hintText: "Messege",
-          maxLines: 5,
-          validator: validateField,
-          controller: messegeCont,
+    return Form(
+      key: formKey,
+      child: Column(
+        children: [
+          TxtField(
+            hintText: "Name",
+            // validator: validateField,
+            controller: nameCont,
+            maxLength: 25,
+            maxLines: 1,
+            maxLengthEnforcement: MaxLengthEnforcement.enforced,
+            inputFormatters: [
+              LengthLimitingTextInputFormatter(25),
+              FilteringTextInputFormatter.deny(
+                  RegExp(r'\s\s+')), // Deny extra spaces
+              FilteringTextInputFormatter.deny('\n'), // Deny extra lines
+            ],
+          ),
+          heightSizedBox(30.0),
+          TxtField(
+            hintText: "Email",
+            validator: validateEmail,
+            controller: emailCont,
+            maxLines: 1,
+            maxLength: 40,
+            maxLengthEnforcement: MaxLengthEnforcement.enforced,
+            inputFormatters: [
+              LengthLimitingTextInputFormatter(40),
+              FilteringTextInputFormatter.deny(
+                  RegExp(r'\s\s+')), // Deny extra spaces
+              FilteringTextInputFormatter.deny('\n'), // Deny extra lines
+            ],
+          ),
+          heightSizedBox(30.0),
+          TxtField(
+            hintText: "Mobile",
+            validator: validateMobile,
+            controller: mobileCont,
+            maxLength: 10,
+            maxLines: 1,
+            maxLengthEnforcement: MaxLengthEnforcement.enforced,
+            inputFormatters: [
+              LengthLimitingTextInputFormatter(10),
+                FilteringTextInputFormatter.deny(
+                  RegExp(r'\s+')), 
+              // FilteringTextInputFormatter.deny(
+              //     RegExp(r'\s\s+')), // Deny extra spaces
+              FilteringTextInputFormatter.deny('\n'), // Deny extra lines
+            ],
+          ),
+          heightSizedBox(30.0),
+          TxtField(
+            hintText: "Messege",
+            validator: validateField,
+            controller: messegeCont,
+            maxLines: 5,
+            maxLengthEnforcement: MaxLengthEnforcement.enforced,
+            inputFormatters: [
+              LengthLimitingTextInputFormatter(500),
+              FilteringTextInputFormatter.deny(
+                  RegExp(r'\s\s+')), // Deny extra spaces
+              FilteringTextInputFormatter.deny('\n'), // Deny extra lines
+            ],
+          ),
+          heightSizedBox(30.0),
+          SubmitBtn(
+            name: "Submit",
+            onTap: () {
+              var isvalid = formKey.currentState!.validate();
 
-          // height: 100,
-        ),
-        heightSizedBox(30.0),
-        SubmitBtn(
-          name: "Submit",
-          onTap: () {
-           ContactUsResp().addContactUs(email: emailCont.text, msg: messegeCont.text, name: nameCont.text, mobile: mobileCont.text) ;
-           
-          },
-        )
-      ],
+              if (isvalid == true) {
+                formKey.currentState!.save();
+                debounce.run(() {
+                  log("msg ${messegeCont.text.length}");
+                  // ContactUsResp().addContactUs(
+                  //     email: emailCont.text,
+                  //     msg: messegeCont.text,
+                  //     name: nameCont.text,
+                  //     mobile: mobileCont.text);
+
+                  snackBar(context, 'Message Sent Successfully 😃');
+                });
+              } else {
+                snackBar(context, 'Field is Required');
+              }
+            },
+          )
+        ],
+      ),
     );
   }
 }

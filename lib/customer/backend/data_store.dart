@@ -30,7 +30,7 @@ class ContactUsResp {
             ? emailQuery.docs.first.id
             : mobileQuery.docs.first.id;
         await collectionRef.doc(docId).update({
-          'message': FieldValue.arrayUnion([msg]),
+          'msg': FieldValue.arrayUnion([msg]),
           'up_date': DateTime.now()
         });
         log('List item updated successfully!');
@@ -39,7 +39,7 @@ class ContactUsResp {
           'name': name,
           'email': email,
           'mobile': mobile,
-          'msg': [msg], 
+          'msg': [msg],
           'cr_date': DateTime.now(),
           'up_date': DateTime.now()
         });
