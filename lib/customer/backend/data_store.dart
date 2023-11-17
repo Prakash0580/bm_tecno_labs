@@ -30,7 +30,8 @@ class ContactUsResp {
             ? emailQuery.docs.first.id
             : mobileQuery.docs.first.id;
         await collectionRef.doc(docId).update({
-          'message': FieldValue.arrayUnion([msg])
+          'message': FieldValue.arrayUnion([msg]),
+          'up_date': DateTime.now()
         });
         log('List item updated successfully!');
       } else {
@@ -38,7 +39,9 @@ class ContactUsResp {
           'name': name,
           'email': email,
           'mobile': mobile,
-          'msg': [msg]
+          'msg': [msg], 
+          'cr_date': DateTime.now(),
+          'up_date': DateTime.now()
         });
       }
 
@@ -86,8 +89,8 @@ class ContactUsResp {
             }));
       }
 
-      // Check if the email exists
-      QuerySnapshot notificationToken = await collectionRef.limit(1).get();
+      // // Check if the email exists
+      // QuerySnapshot notificationToken = await collectionRef.limit(1).get();
     } catch (err) {
       log(err.toString());
     }
