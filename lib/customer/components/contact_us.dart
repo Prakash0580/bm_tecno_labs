@@ -186,12 +186,12 @@ class _ContactFormState extends State<ContactForm> {
               if (isvalid == true) {
                 formKey.currentState!.save();
                 debounce.run(() {
-                  log("msg ${messegeCont.text.length}");
-                  // ContactUsResp().addContactUs(
-                  //     email: emailCont.text,
-                  //     msg: messegeCont.text,
-                  //     name: nameCont.text,
-                  //     mobile: mobileCont.text);
+                 
+                  ContactUsResp().addContactUs(
+                      email: emailCont.text,
+                      msg: messegeCont.text,
+                      name: nameCont.text,
+                      mobile: mobileCont.text);
 
                   snackBar(context, 'Message Sent Successfully 😃');
                 });
