@@ -48,18 +48,8 @@ class MobOffering extends StatelessWidget {
             style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
           ),
           heightSizedBox(15.0),
-          const Center(
-            child: Text(
-              "Our company is an end-to-end, customer\noriented alternative energy company that\nis centered on the marketing, trading,\ntransportation, and distribution of solar panels in the India and around the world…",
-              style: TextStyle(
-                fontSize: 18,
-                color: Colors.black87,
-              ),
-            ),
-          ),
-          heightSizedBox(15.0),
-          const Text(
-            "Firstly, we’re an environmentally friendly\nrenewable energy companyoffering a\nbroad portfolio of technologies o our clients\n globally!",
+          Text(
+            "Our company is an end-to-end, customer oriented alternative energy company that is centered on the marketing, trading, transportation, and distribution of solar panels in the India and around the world…",
             style: TextStyle(
               fontSize: 18,
               color: Colors.black87,
@@ -67,7 +57,15 @@ class MobOffering extends StatelessWidget {
           ),
           heightSizedBox(15.0),
           const Text(
-            "We’re the best solar energy & wind turbines\nprovider in the States!",
+            "Firstly, we’re an environmentally friendly renewable energy companyoffering a broad portfolio of technologies o our clients globally!",
+            style: TextStyle(
+              fontSize: 18,
+              color: Colors.black87,
+            ),
+          ),
+          heightSizedBox(15.0),
+          const Text(
+            "We’re the best solar energy & solar system provider in the States!",
             style: TextStyle(
               fontSize: 18,
               color: Colors.black87,
@@ -92,6 +90,7 @@ class MyWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
       children: [
         const DividerHeading(
           heading: "Auto LPG",
@@ -105,18 +104,8 @@ class MyWidget extends StatelessWidget {
           style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
         ),
         heightSizedBox(15.0),
-        const Center(
-          child: Text(
-            "Our company is an end-to-end, customer\noriented alternative energy company that\nis centered on the marketing, trading,\ntransportation, and distribution of solar panels in the India and around the world…",
-            style: TextStyle(
-              fontSize: 18,
-              color: Colors.black87,
-            ),
-          ),
-        ),
-        heightSizedBox(15.0),
         const Text(
-          "Firstly, we’re an environmentally friendly\nrenewable energy companyoffering a\nbroad portfolio of technologies o our clients\n globally!",
+          "Our company is an end-to-end, customer oriented alternative energy company that is centered on the marketing, trading, transportation, and distribution of solar panels in the India and around the world…",
           style: TextStyle(
             fontSize: 18,
             color: Colors.black87,
@@ -124,7 +113,15 @@ class MyWidget extends StatelessWidget {
         ),
         heightSizedBox(15.0),
         const Text(
-          "We’re the best solar energy & wind turbines\nprovider in the States!",
+          "Firstly, we’re an environmentally friendly renewable energy companyoffering a broad portfolio of technologies o our clients globally!",
+          style: TextStyle(
+            fontSize: 18,
+            color: Colors.black87,
+          ),
+        ),
+        heightSizedBox(15.0),
+        const Text(
+          "We’re the best solar energy & solar system provider in the States!",
           style: TextStyle(
             fontSize: 18,
             color: Colors.black87,

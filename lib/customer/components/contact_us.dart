@@ -70,7 +70,7 @@ class ContactDetails extends StatelessWidget {
         const ContectItems(
           icon: Icons.email,
           title: "Email:",
-          text: "bmtecnolabs@gmail.com",
+          text: "bmtechnolabs@gmail.com",
         ),
         // TxtField(
         //   headTxt: "Name",
