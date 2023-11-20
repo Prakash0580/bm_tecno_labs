@@ -29,6 +29,7 @@ class HomeScreen extends StatelessWidget {
               // const TopBanner(),
               if (Responsive.isMobile(context)) const MobTopBanner(),
               if (Responsive.isTablet(context)) const TabTopBanner(),
+                 if (Responsive.isDesktop(context)) const TopBanner(),
               // ServiceRow(),
               if (Responsive.isMobile(context)) const MobServiceRow(),
               if (Responsive.isTablet(context)) const ServiceRow(),
