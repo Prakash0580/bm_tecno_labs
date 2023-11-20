@@ -26,14 +26,14 @@ class HomeScreen extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: [
-               // const TopBanner(),
+              // const TopBanner(),
               if (Responsive.isMobile(context)) const MobTopBanner(),
               if (Responsive.isTablet(context)) const TabTopBanner(),
-                // ServiceRow(),   
+              // ServiceRow(),
               if (Responsive.isMobile(context)) const MobServiceRow(),
               if (Responsive.isTablet(context)) const ServiceRow(),
               if (Responsive.isDesktop(context)) const ServiceRow(),
- 
+
               if (Responsive.isMobile(context)) const MobOffering(),
               if (Responsive.isTablet(context)) const Offering(),
               if (Responsive.isDesktop(context)) const Offering(),
@@ -126,30 +126,35 @@ class MobServiceRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        const CusText(
-          text: "Solar Power",
-          src: "assets/images/sun.png",
-          description:
-              "BmTechnoLabs begins its scope of work with the design and\nengineering of the project, and provides END-TO-END\n          Solutions tailored to individual requirements",
-        ),
-        heightSizedBox(30.0),
-        const CusText(
-          text: "LPG",
-          src: "assets/images/truck.png",
-          description:
-              "BmTechnoLabs are the authorized by Government\nof India (CCOE) for installing advanced Auto LPG\n                                  dispensing stations.",
-        ),
-        heightSizedBox(30.0),
-        const CusText(
-          text: "CNG",
-          src: "assets/images/globe.png",
-          description:
-              "BmTechnoLabs can provide complete services for\nsetting up a CNG Auto Station in any part of India\n                 other South Asian countries.",
-        ),
-        heightSizedBox(30.0),
-      ],
+    return Padding(
+      padding: const EdgeInsets.only(left: 10, right: 10),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const CusText(
+            text: "Solar Power",
+            src: "assets/images/sun.png",
+            description:
+                "BmTechnoLabs begins its scope of work with the design and engineering of the project, and provides END-TO-END Solutions tailored to individual requirements",
+          ),
+          heightSizedBox(30.0),
+          const CusText(
+            text: "LPG",
+            src: "assets/images/truck.png",
+            description:
+                "BmTechnoLabs are the authorized by Government of India (CCOE) for installing advanced Auto LPG dispensing stations.",
+          ),
+          heightSizedBox(30.0),
+          const CusText(
+            text: "CNG",
+            src: "assets/images/globe.png",
+            description:
+                "BmTechnoLabs can provide complete services for setting up a CNG Auto Station in any part of India other South Asian countries.",
+          ),
+          const Divider(),
+          heightSizedBox(50.0),
+        ],
+      ),
     );
   }
 }
@@ -175,6 +180,7 @@ class CusText extends StatelessWidget {
         heightSizedBox(20.0),
         Text(
           text,
+          // overflow: TextOverflow.clip,
           style: const TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
         ),
         heightSizedBox(20.0),

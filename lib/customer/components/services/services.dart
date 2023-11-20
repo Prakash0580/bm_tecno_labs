@@ -14,15 +14,14 @@ class Offering extends StatelessWidget {
       padding: const EdgeInsets.only(left: 100),
       child: Column(
         children: [
-        const  Solar(),
+          const Solar(),
           heightSizedBox(50.0),
-         const  AutoLPG(),
+          const AutoLPG(),
         ],
       ),
     );
   }
 }
-
 
 class MobOffering extends StatelessWidget {
   const MobOffering({
@@ -37,6 +36,13 @@ class MobOffering extends StatelessWidget {
         // mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          const DividerHeading(
+            heading: "Solar Power",
+            leftWidth: 100,
+            rightWidth: 100,
+            centerWidth: 80,
+          ),
+          heightSizedBox(50.0),
           const Text(
             "We Offer Green Technologiest",
             style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
@@ -46,28 +52,87 @@ class MobOffering extends StatelessWidget {
             child: Text(
               "Our company is an end-to-end, customer\noriented alternative energy company that\nis centered on the marketing, trading,\ntransportation, and distribution of solar panels in the India and around the world…",
               style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.grey),
+                fontSize: 18,
+                color: Colors.black87,
+              ),
             ),
           ),
           heightSizedBox(15.0),
           const Text(
             "Firstly, we’re an environmentally friendly\nrenewable energy companyoffering a\nbroad portfolio of technologies o our clients\n globally!",
             style: TextStyle(
-                fontSize: 18, fontWeight: FontWeight.w600, color: Colors.grey),
+              fontSize: 18,
+              color: Colors.black87,
+            ),
           ),
           heightSizedBox(15.0),
           const Text(
             "We’re the best solar energy & wind turbines\nprovider in the States!",
             style: TextStyle(
-                fontSize: 18, fontWeight: FontWeight.w600, color: Colors.grey),
+              fontSize: 18,
+              color: Colors.black87,
+            ),
           ),
           heightSizedBox(40.0),
-          Image.asset("assets/images/11.jpg")
+          Image.asset("assets/images/11.jpg"),
+          heightSizedBox(20.0),
+          const Divider(),
+          heightSizedBox(30.0),
+          const MyWidget()
         ],
       ),
     );
     //
+  }
+}
+
+class MyWidget extends StatelessWidget {
+  const MyWidget({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        const DividerHeading(
+          heading: "Auto LPG",
+          leftWidth: 100,
+          rightWidth: 100,
+          centerWidth: 80,
+        ),
+        heightSizedBox(50.0),
+        const Text(
+          "We Offer Green Technologiest",
+          style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+        ),
+        heightSizedBox(15.0),
+        const Center(
+          child: Text(
+            "Our company is an end-to-end, customer\noriented alternative energy company that\nis centered on the marketing, trading,\ntransportation, and distribution of solar panels in the India and around the world…",
+            style: TextStyle(
+              fontSize: 18,
+              color: Colors.black87,
+            ),
+          ),
+        ),
+        heightSizedBox(15.0),
+        const Text(
+          "Firstly, we’re an environmentally friendly\nrenewable energy companyoffering a\nbroad portfolio of technologies o our clients\n globally!",
+          style: TextStyle(
+            fontSize: 18,
+            color: Colors.black87,
+          ),
+        ),
+        heightSizedBox(15.0),
+        const Text(
+          "We’re the best solar energy & wind turbines\nprovider in the States!",
+          style: TextStyle(
+            fontSize: 18,
+            color: Colors.black87,
+          ),
+        ),
+        heightSizedBox(40.0),
+        Image.asset("assets/images/station.png")
+      ],
+    );
   }
 }

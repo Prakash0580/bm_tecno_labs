@@ -173,7 +173,7 @@ class DividerHeading extends StatelessWidget {
             Container(
               height: 1,
               width: centerWidth,
-              color: Color(0xFF88d037),
+              color: const Color(0xFF88d037),
             ),
             Container(
               height: 1,
