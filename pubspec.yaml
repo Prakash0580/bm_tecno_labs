@@ -20,6 +20,14 @@ dependencies:
   # flutter_riverpod: ^2.4.6
   # flutter_secure_storage: ^9.0.0
   # app_settings: ^5.1.1
+  # flutter_launcher_icons: ^0.13.1
+
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/AdminLogo.png"
+  min_sdk_android: 21
   
 
 dev_dependencies:

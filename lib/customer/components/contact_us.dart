@@ -1,4 +1,3 @@
-import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -26,14 +25,14 @@ class ContactUs extends StatelessWidget {
             style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
           ),
           heightSizedBox(50.0),
-          Padding(
-            padding: const EdgeInsets.only(left: 200, right: 200),
+          const Padding(
+            padding: EdgeInsets.only(left: 200, right: 200),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const ContactDetails(),
-                const Spacer(),
+                ContactDetails(),
+                Spacer(),
                 Expanded(child: ContactForm()),
               ],
             ),
@@ -268,7 +267,7 @@ class MobContactUs extends StatelessWidget {
             heightSizedBox(50.0),
             const ContactDetails(),
             heightSizedBox(50.0),
-            ContactForm()
+            const ContactForm()
 
             // )
           ],

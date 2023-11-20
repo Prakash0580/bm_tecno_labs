@@ -21,21 +21,19 @@ class Gallery extends StatelessWidget {
             style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
           ),
           heightSizedBox(50.0),
-          Expanded(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const GalleryCont(
-                  src: "assets/images/gallery1.jpg",
-                ),
-                widthSizedBox(30.0),
-                const GalleryCont(
-                  src: "assets/images/gallery2.jpg",
-                  width: 430,
-                  height: 250,
-                ),
-              ],
-            ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const GalleryCont(
+                src: "assets/images/gallery1.jpg",
+              ),
+              widthSizedBox(30.0),
+              const GalleryCont(
+                src: "assets/images/gallery2.jpg",
+                width: 430,
+                height: 250,
+              ),
+            ],
           ),
           heightSizedBox(30.0),
           Row(

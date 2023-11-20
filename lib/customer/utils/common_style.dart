@@ -2,10 +2,7 @@ import 'package:flutter/material.dart';
 
 class AppColor {
   static const backgroundColr = Colors.amber;
- 
 }
-
-
 
 double height(BuildContext context) {
   return MediaQuery.of(context).size.height;
@@ -27,8 +24,6 @@ SizedBox widthSizedBox(width) {
   );
 }
 
-
-
 // const textStyle1 = TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold);
 // const textStyle2 = TextStyle(fontSize: 15.0, fontWeight: FontWeight.w500);
 
@@ -43,15 +38,12 @@ ScaffoldFeatureController<SnackBar, SnackBarClosedReason> snackBar(
   );
 }
 
-
 class SubmitBtn extends StatelessWidget {
   final String name;
   final Function()? onTap;
   final Color? backgrounColor;
-  const SubmitBtn({
-    super.key,
-    required this.name,this.onTap,this.backgrounColor
-  });
+  const SubmitBtn(
+      {super.key, required this.name, this.onTap, this.backgrounColor});
 
   @override
   Widget build(BuildContext context) {
@@ -59,10 +51,10 @@ class SubmitBtn extends StatelessWidget {
         style: ElevatedButton.styleFrom(
             elevation: 5,
             shadowColor: Colors.black,
-            backgroundColor:backgrounColor?? const Color(0xFF88d037),
+            backgroundColor: backgrounColor ?? const Color(0xFF88d037),
             fixedSize: const Size(200, 60)),
         onPressed: onTap,
-        child:  Text(
+        child: Text(
           name,
           style: const TextStyle(fontSize: 20, color: Colors.black),
         ));

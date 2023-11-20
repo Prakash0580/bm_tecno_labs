@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 import '../utils/common_style.dart';
@@ -62,7 +61,6 @@ class TopBanner extends StatelessWidget {
         //     fit: BoxFit.cover,
         //   ),
         // ),
-        heightSizedBox(100.0),
       ],
     );
   }
