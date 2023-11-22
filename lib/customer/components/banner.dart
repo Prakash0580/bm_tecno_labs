@@ -17,7 +17,7 @@ class TopBanner extends StatelessWidget {
           decoration: const BoxDecoration(
             image: DecorationImage(
               image: AssetImage(
-                  'assets/images/4.jpg'), // Replace with your image path
+                  'assets/images/banner.jpg'), // Replace with your image path
               fit: BoxFit.cover, // You can change this to fit your needs
             ),
           ),
@@ -147,43 +147,43 @@ class MobTopBanner extends StatelessWidget {
             decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage(
-                    'assets/images/4.jpg'), // Replace with your image path
+                    'assets/images/banner.jpg'), // Replace with your image path
                 fit: BoxFit.cover, // You can change this to fit your needs
               ),
             ),
-            child: Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  // Padding(padding: EdgeInsets.only(left: 20)),
-                  heightSizedBox(50.0),
-                  const Text(
-                    "We stand for ecology and",
-                    style: TextStyle(
-                        fontSize: 22,
-                        fontWeight: FontWeight.w700,
-                        color: Colors.white),
-                  ),
-                  heightSizedBox(20.0),
-                  const Text(
-                    "Soloar Energy",
-                    style: TextStyle(
-                        fontSize: 35,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white),
-                  ),
-                  heightSizedBox(30.0),
-                  const Text(
-                    "Select Solar Panels and make your\ncontributionto ecologynd life on the\nEarth! This solution will positively\naffect your life!",
-                    style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white),
-                  )
-                ],
-              ),
-            ),
+            // child: Padding(
+            //   padding: const EdgeInsets.all(10.0),
+            //   child: Column(
+            //     crossAxisAlignment: CrossAxisAlignment.start,
+            //     children: [
+            //       // Padding(padding: EdgeInsets.only(left: 20)),
+            //       heightSizedBox(50.0),
+            //       const Text(
+            //         "We stand for ecology and",
+            //         style: TextStyle(
+            //             fontSize: 22,
+            //             fontWeight: FontWeight.w700,
+            //             color: Colors.black87),
+            //       ),
+            //       heightSizedBox(20.0),
+            //       const Text(
+            //         "Soloar Energy",
+            //         style: TextStyle(
+            //             fontSize: 35,
+            //             fontWeight: FontWeight.bold,
+            //             color: Colors.black87),
+            //       ),
+            //       heightSizedBox(30.0),
+            //       const Text(
+            //         "Select Solar Panels and make your\ncontributionto ecologynd life on the\nEarth! This solution will positively\naffect your life!",
+            //         style: TextStyle(
+            //             fontSize: 20,
+            //             // fontWeight: FontWeight.bww
+            //             color: Colors.white),
+            //       )
+            //     ],
+            //   ),
+            // ),
           ),
           // Container(
           //   child: Image.asset(

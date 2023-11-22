@@ -24,7 +24,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'BmTechnolabs',
       theme: ThemeData(fontFamily: 'CrimsonText'),
-      // key: navigatorKey,
       debugShowCheckedModeBanner: false,
       home:  const HomeScreen(),
     );

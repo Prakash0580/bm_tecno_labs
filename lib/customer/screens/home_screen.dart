@@ -29,7 +29,7 @@ class HomeScreen extends StatelessWidget {
               // const TopBanner(),
               if (Responsive.isMobile(context)) const MobTopBanner(),
               if (Responsive.isTablet(context)) const TabTopBanner(),
-                 if (Responsive.isDesktop(context)) const TopBanner(),
+              if (Responsive.isDesktop(context)) const TopBanner(),
               // ServiceRow(),
               if (Responsive.isMobile(context)) const MobServiceRow(),
               if (Responsive.isTablet(context)) const ServiceRow(),
@@ -127,36 +127,81 @@ class MobServiceRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(left: 10, right: 10),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const CusText(
-            text: "Solar Power",
-            src: "assets/images/sun.png",
-            description:
-                "BmTechnoLabs begins its scope of work with the design and engineering of the project, and provides END-TO-END Solutions tailored to individual requirements",
-          ),
-          heightSizedBox(30.0),
-          const CusText(
-            text: "LPG",
-            src: "assets/images/truck.png",
-            description:
-                "BmTechnoLabs are the authorized by Government of India (CCOE) for installing advanced Auto LPG dispensing stations.",
-          ),
-          heightSizedBox(30.0),
-          const CusText(
-            text: "CNG",
-            src: "assets/images/globe.png",
-            description:
-                "BmTechnoLabs can provide complete services for setting up a CNG Auto Station in any part of India other South Asian countries.",
-          ),
-          const Divider(),
-          heightSizedBox(50.0),
-        ],
+    return Container(
+      width: width(context),
+      height: null,
+      color: Colors.grey.shade100,
+      child: Padding(
+        padding: const EdgeInsets.all(10),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            const Text(
+              "Welcome To BmTecnoLabs",
+              style: TextStyle(fontSize: 25, fontWeight: FontWeight.w600),
+            ),
+            heightSizedBox(10.0),
+            const Text(
+              "cutting edge material testing solutions",
+              style: TextStyle(
+                fontSize: 25,
+              ),
+              textAlign: TextAlign.center,
+            ),
+            heightSizedBox(20.0),
+            const Text(
+              "Bm Tecno Labs is committed to provide Testing Solutions with cutting edge technology and marvellous analysis and observations to the clients with an objective to help them take informed decisions so as to re-inforce trust, increase productivity and minimize cost. ",
+              style: TextStyle(fontSize: 20, color: Colors.black87),
+              textAlign: TextAlign.center,
+            ),
+            heightSizedBox(10.0),
+            const Text(
+              "We view ourselves as partners with our clients, our employees, our community and our environment.",
+              style: TextStyle(fontSize: 20, color: Colors.black87),
+              textAlign: TextAlign.center,
+            ),
+            heightSizedBox(20.0),
+            Container(
+              height: 1,
+              width: 200,
+              color: Colors.black,
+            ),
+            // heightSizedBox(30.0),
+          ],
+        ),
       ),
     );
+    // Padding(
+    //   padding: const EdgeInsets.only(left: 10, right: 10),
+    //   child: Column(
+    //     mainAxisAlignment: MainAxisAlignment.center,
+    //     children: [
+    //       const CusText(
+    //         text: "Solar Power",
+    //         src: "assets/images/sun.png",
+    //         description:
+    //             "BmTechnoLabs begins its scope of work with the design and engineering of the project, and provides END-TO-END Solutions tailored to individual requirements",
+    //       ),
+    //       heightSizedBox(30.0),
+    //       const CusText(
+    //         text: "LPG",
+    //         src: "assets/images/truck.png",
+    //         description:
+    //             "BmTechnoLabs are the authorized by Government of India (CCOE) for installing advanced Auto LPG dispensing stations.",
+    //       ),
+    //       heightSizedBox(30.0),
+    //       const CusText(
+    //         text: "CNG",
+    //         src: "assets/images/globe.png",
+    //         description:
+    //             "BmTechnoLabs can provide complete services for setting up a CNG Auto Station in any part of India other South Asian countries.",
+    //       ),
+    //       const Divider(),
+    //       heightSizedBox(50.0),
+    //     ],
+    //   ),
+    // );
   }
 }
 
@@ -172,21 +217,34 @@ class CusText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        // heightSizedBox(50.0),
-        Image.asset(
-          src,
-          height: 60,
-          width: 60,
+        const CircleAvatar(
+          radius: 28,
+          backgroundColor: Color(0xFF88d037),
+          child: CircleAvatar(
+            radius: 17,
+            backgroundColor: Colors.white,
+            child: Center(
+              child: Icon(
+                Icons.done_outlined,
+                color: Color(0xFF88d037),
+                // fill: 2.0,
+
+                // size: ,
+              ),
+            ),
+          ),
         ),
         heightSizedBox(20.0),
         Text(
           text,
+          textAlign: TextAlign.center,
           // overflow: TextOverflow.clip,
-          style: const TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+          style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
         ),
         heightSizedBox(20.0),
         Text(
           description,
+          textAlign: TextAlign.center,
           style: const TextStyle(
             fontSize: 18,
             color: Colors.black87,

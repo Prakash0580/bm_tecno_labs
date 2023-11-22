@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../utils/common_style.dart';
 
 class Consult extends StatelessWidget {
@@ -41,25 +42,23 @@ class Consult extends StatelessWidget {
             name: "Call2Action",
             backgrounColor: Colors.white,
             onTap: () {
-              // showDialog(
-              //     context: context,
-              //     builder: (BuildContext context) {
-              //       return AlertDialog(
-              //         content: Container(
-              //           width: 800,
-              //           height: 500,
-              //           color: Colors.green,
-              //           child: Column(
-              //             children: [],
-              //           ),
-              //         ),
-              //       );
-              //     });
+              openPhoneDialer("9876543210");
             },
           )
         ],
       ),
     );
+  }
+}
+
+void openPhoneDialer(String phoneNumber) async {
+  // const phoneNumber = '9782209395'; // Replace with the actual phone number
+  final Uri phoneDialerUri = Uri(scheme: 'tel', path: phoneNumber);
+
+  if (await canLaunchUrl(phoneDialerUri)) {
+    await launchUrl(phoneDialerUri);
+  } else {
+    throw 'Could not launch $phoneDialerUri';
   }
 }
 
@@ -100,12 +99,13 @@ class MobConsult extends StatelessWidget {
             SubmitBtn(
               backgrounColor: Colors.white,
               name: "Call2Action",
-              onTap: () {},
+              onTap: () {
+                openPhoneDialer("9876543210");
+              },
             )
           ],
         ),
       ),
-      // // widthSizedBox(100.0),
     );
   }
 }
