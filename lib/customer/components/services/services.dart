@@ -17,7 +17,7 @@ class Offering extends StatelessWidget {
         children: [
           const Solar(),
           heightSizedBox(50.0),
-          const AutoLPG(),
+          // const AutoLPG(),
         ],
       ),
     );
@@ -51,7 +51,7 @@ class MobOffering extends StatelessWidget {
             heightSizedBox(20.0),
             const CusText(
               text: "Non-Destructive Testing ",
-              src: "assets/images/sun.png",
+           
               description:
                   "Material Testing that does not destroy the serviceability of the part or the system.​",
               // description:
@@ -60,35 +60,35 @@ class MobOffering extends StatelessWidget {
             heightSizedBox(30.0),
             const CusText(
               text: "Soil Testing​",
-              src: "assets/images/truck.png",
+            
               description:
                   "Soil testing to check various parameters like pH, Nitrogen, Potassium, etc. levels",
             ),
             heightSizedBox(30.0),
             const CusText(
               text: "Building Material Testing​",
-              src: "assets/images/globe.png",
+        
               description:
                   "Test for materials such as aggregates, concrete, masonry, steel, and asphalt.​",
             ),
             heightSizedBox(30.0),
             const CusText(
               text: "Chemical Testing​​",
-              src: "assets/images/globe.png",
+             
               description:
                   "Chemical testing to evaluate Quality, Purity, Traces, RoHS, Etc.",
             ),
             heightSizedBox(30.0),
             const CusText(
               text: "Water Testing​​",
-              src: "assets/images/globe.png",
+            
               description:
                   "Water testing is a process of evaluating and testing the quality of water.",
             ),
             heightSizedBox(30.0),
             const CusText(
               text: "Automotive Testing​",
-              src: "assets/images/globe.png",
+            
               description:
                   "Automotive parts testing for quality asurance and compliance",
             ),

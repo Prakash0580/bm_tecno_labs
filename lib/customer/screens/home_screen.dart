@@ -7,6 +7,7 @@ import '../components/consult.dart';
 import '../components/contact_us.dart';
 import '../components/drawer.dart';
 import '../components/gallery.dart';
+
 import '../components/services/services.dart';
 import '../components/our_team.dart';
 import '../components/res_layout.dart';
@@ -88,34 +89,60 @@ class ServiceRow extends StatelessWidget {
       child: Column(
         children: [
           heightSizedBox(50.0),
-          const Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Expanded(
-                  child: CusText(
-                    text: "Solar Power",
-                    src: "assets/images/sun.png",
-                    description:
-                        "BmTechnoLabs begins its scope of work with the design and\nengineering of the project, and provides END-TO-END\n          Solutions tailored to individual requirements",
-                  ),
-                ),
-                Expanded(
-                  child: CusText(
-                    text: "LPG",
-                    src: "assets/images/truck.png",
-                    description:
-                        "BmTechnoLabs are the authorized by Government\nof India (CCOE) for installing advanced Auto LPG\n                                  dispensing stations.",
-                  ),
-                ),
-                Expanded(
-                  child: CusText(
-                    text: "CNG",
-                    src: "assets/images/globe.png",
-                    description:
-                        "BmTechnoLabs can provide complete services for\nsetting up a CNG Auto Station in any part of India\n                 other South Asian countries.",
-                  ),
-                ),
-              ]),
+          const Welcome(),
+          const Text(
+            "What We Offer",
+            style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+          ),
+          heightSizedBox(20.0),
+          const Text(
+            "Stellar Test House has been created to provide excellent testing and analytical services to the clients. We are fully committed to play our role of Quality Control and\nquality assessment and therefore our lab is equipped with the latest and most sophisticated testing equipments to meet the standards established by ILAC, ASTM, ISO,\nBIS & NABL.",
+            style: TextStyle(fontSize: 20, color: Colors.black87),
+          ),
+          heightSizedBox(20.0),
+          const Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
+            Expanded(
+              child: CusText(
+                  text: "Non-Destructive Testing (NDT)",
+                  description:
+                      "Material Testing that does not destroy the\nserviceability of the part or the system.​"),
+            ),
+            Expanded(
+              child: CusText(
+                  text: "Building Material Testing​",
+                  description:
+                      "Test for materials such as aggregates, concrete,\nmasonry, steel, and asphalt.​"),
+            ),
+            Expanded(
+              child: CusText(
+                text: "Water Testing​",
+                description:
+                    "Water testing is a process of evaluating and\ntesting the quality of water.",
+              ),
+            ),
+          ]),
+          heightSizedBox(30.0),
+          const Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
+            Expanded(
+              child: CusText(
+                  text: "Soil Testing​​",
+                  description:
+                      "Soil testing to check various parameters like pH,\nNitrogen, Potassium, etc. levels.​"),
+            ),
+            Expanded(
+              child: CusText(
+                  text: "Chemical Testing​",
+                  description:
+                      "Chemical testing to evaluate Quality, Purity, Traces,\nRoHS, Etc.​​"),
+            ),
+            Expanded(
+              child: CusText(
+                text: "Automotive Testing​",
+                description:
+                    "Automotive parts testing for quality assurance and\ncompliance.",
+              ),
+            ),
+          ]),
         ],
       ),
     );
@@ -167,51 +194,76 @@ class MobServiceRow extends StatelessWidget {
               width: 200,
               color: Colors.black,
             ),
-            // heightSizedBox(30.0),
           ],
         ),
       ),
     );
-    // Padding(
-    //   padding: const EdgeInsets.only(left: 10, right: 10),
-    //   child: Column(
-    //     mainAxisAlignment: MainAxisAlignment.center,
-    //     children: [
-    //       const CusText(
-    //         text: "Solar Power",
-    //         src: "assets/images/sun.png",
-    //         description:
-    //             "BmTechnoLabs begins its scope of work with the design and engineering of the project, and provides END-TO-END Solutions tailored to individual requirements",
-    //       ),
-    //       heightSizedBox(30.0),
-    //       const CusText(
-    //         text: "LPG",
-    //         src: "assets/images/truck.png",
-    //         description:
-    //             "BmTechnoLabs are the authorized by Government of India (CCOE) for installing advanced Auto LPG dispensing stations.",
-    //       ),
-    //       heightSizedBox(30.0),
-    //       const CusText(
-    //         text: "CNG",
-    //         src: "assets/images/globe.png",
-    //         description:
-    //             "BmTechnoLabs can provide complete services for setting up a CNG Auto Station in any part of India other South Asian countries.",
-    //       ),
-    //       const Divider(),
-    //       heightSizedBox(50.0),
-    //     ],
-    //   ),
-    // );
+  }
+}
+
+class Welcome extends StatelessWidget {
+  const Welcome({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Expanded(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  const Text(
+                    "Welcome to BmTecnoLab",
+                    style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+                  ),
+                  heightSizedBox(5.0),
+                  const Text(
+                    "Cutting edge material testing solutions",
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
+                  heightSizedBox(15.0),
+                  const Text(
+                    "BmTecnoLabs Test House is committed to provide Testing Solutions with\ncutting edge technology and marvellous analysis and observations to\nthe clients with an objective to help them take informed decisions\nso as to re-inforce trust, increase productivity and minimize cost. ",
+                    style: TextStyle(
+                        fontSize: 20,
+                        // fontWeight: FontWeight.bold,
+                        color: Colors.black87),
+                    textAlign: TextAlign.start,
+                  ),
+                  heightSizedBox(15.0),
+                  const Text(
+                    "We view ourselves as partners with our clients, our employees, our\ncommunity and our environment.",
+                    style: TextStyle(
+                        fontSize: 20,
+                        // fontWeight: FontWeight.bold,
+                        color: Colors.black87),
+                    textAlign: TextAlign.start,
+                  ),
+                ],
+              ),
+            ),
+            // widthSizedBox(30.0),
+            Expanded(child: Image.asset("assets/images/banner1.jpg"))
+          ],
+        ),
+      ],
+    );
   }
 }
 
 class CusText extends StatelessWidget {
-  final String text, description, src;
-  const CusText(
-      {super.key,
-      required this.text,
-      required this.description,
-      required this.src});
+  final String text, description;
+  const CusText({
+    super.key,
+    required this.text,
+    required this.description,
+  });
 
   @override
   Widget build(BuildContext context) {

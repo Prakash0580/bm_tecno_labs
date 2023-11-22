@@ -21,37 +21,37 @@ class TopBanner extends StatelessWidget {
               fit: BoxFit.cover, // You can change this to fit your needs
             ),
           ),
-          child: Padding(
-            padding: const EdgeInsets.only(top: 100, left: 130),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Text(
-                  "We stand for ecology and",
-                  style: TextStyle(
-                      fontSize: 40,
-                      fontWeight: FontWeight.w700,
-                      color: Colors.white),
-                ),
-                heightSizedBox(20.0),
-                const Text(
-                  "Soloar Energy",
-                  style: TextStyle(
-                      fontSize: 80,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white),
-                ),
-                heightSizedBox(50.0),
-                const Text(
-                  "Select Solar Panels and make your contribution to ecology\nand life on the Earth! This solution will positively affect your life!",
-                  style: TextStyle(
-                      fontSize: 22,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white),
-                )
-              ],
-            ),
-          ),
+          // child: Padding(
+          //   padding: const EdgeInsets.only(top: 100, left: 130),
+          //   child: Column(
+          //     crossAxisAlignment: CrossAxisAlignment.start,
+          //     children: [
+          //       const Text(
+          //         "We stand for ecology and",
+          //         style: TextStyle(
+          //             fontSize: 40,
+          //             fontWeight: FontWeight.w700,
+          //             color: Colors.white),
+          //       ),
+          //       heightSizedBox(20.0),
+          //       const Text(
+          //         "Soloar Energy",
+          //         style: TextStyle(
+          //             fontSize: 80,
+          //             fontWeight: FontWeight.bold,
+          //             color: Colors.white),
+          //       ),
+          //       heightSizedBox(50.0),
+          //       const Text(
+          //         "Select Solar Panels and make your contribution to ecology\nand life on the Earth! This solution will positively affect your life!",
+          //         style: TextStyle(
+          //             fontSize: 22,
+          //             fontWeight: FontWeight.bold,
+          //             color: Colors.white),
+          //       )
+          //     ],
+          //   ),
+          // ),
         ),
         // Container(
         //   child: Image.asset(
